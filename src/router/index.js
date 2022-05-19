@@ -7,6 +7,11 @@ import Shopcar from '../views/Shopcar.vue'
 import Users from '../views/Users.vue'
 import Address from '../views/Address.vue'
 import Index from '../views/Index.vue'
+import GoodsDetail from '../views/GoodsDetail.vue'
+import Goodslist from '../views/Goodslist.vue'
+
+import 'nprogress/nprogress.css'
+import nprogress from 'nprogress'
 // 创建路由对象
 const router = new VueRouter({
     routes: [
@@ -28,7 +33,32 @@ const router = new VueRouter({
             meta: { pageTitle: '我的地址' }
         },
 
+        {
+            path: '/goodsDetail/:id', component: GoodsDetail,
+            props: true,
+            meta: { pageTitle: '商品详情' }
+        },
+
+        {
+            path: '/goodslist', component: Goodslist,
+            meta: { pageTitle: '商品列表' }
+        },
+
     ]
 })
 
-export default router
+
+nprogress.configure({ showSpinner: false });
+// 全局导航（针对所有路由）前守卫
+router.beforeEach((to, from, next) => {
+    console.log('beforeEach')
+    nprogress.start()
+    next();
+})
+// 全局导航后守卫
+router.afterEach((to, from) => {
+    console.log('afterEach')
+    nprogress.done()
+})
+
+export default router;

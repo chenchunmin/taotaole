@@ -7,11 +7,11 @@
 
 <script>
 export default {
-  name: 'App',
+  name: "App",
   data() {
     return {
       ShowNavBar: true,
-      title: "乐淘",
+      isOnline: navigator.online
     };
   },
 
@@ -28,18 +28,45 @@ export default {
       },
       immediate: true,
     },
+    // watch监听网络状态
+    isOnline() {
+      this.isOnline === false && this.$toast.fail('网络异常,请检查网络')
+      this.isOnline === true && this.$toast.success('网络已连接')
+    }
   },
 
   methods: {
+
     onClickLeft() {
       // 返回页面栈的上一个页面(router:路由器route:当前路由)
-      this.$router.back()
-    }
-  }
+      this.$router.back();
+    },
+
+    updateNetwork(e) {
+      this.isOnline = e.type == "online" ? true : false;
+    },
+
+  },
+
+  mounted() {
+    // 全局断网处理
+    window.addEventListener("online", this.updateNetwork);
+    window.addEventListener("offline", this.updateNetwork);
+  },
 
 };
 </script>
 <style lang="scss">
+@import './assets/css/common.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 #app {
   min-width: 320px;
   max-width: 750px;
