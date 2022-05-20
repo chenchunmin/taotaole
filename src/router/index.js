@@ -41,23 +41,23 @@ const router = new VueRouter({
 
         {
             path: '/goodslist', component: Goodslist,
-            meta: { pageTitle: '商品列表' }
+            meta: { pageTitle: '海淘超市' }
         },
 
     ]
 })
 
 
-nprogress.configure({ showSpinner: false });
+nprogress.configure({ showSpinner: false }); // 去掉圆圈加载
 // 全局导航（针对所有路由）前守卫
 router.beforeEach((to, from, next) => {
-    console.log('beforeEach')
+    // console.log('beforeEach')
     nprogress.start()
     next();
 })
 // 全局导航后守卫
 router.afterEach((to, from) => {
-    console.log('afterEach')
+    // console.log('afterEach')
     nprogress.done()
 })
 

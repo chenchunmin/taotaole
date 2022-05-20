@@ -3,7 +3,9 @@ import {
     Button, Tabbar, TabbarItem, Icon,
     NavBar, Toast, Search, Sticky, Swipe,
     SwipeItem, Grid, GridItem, Divider,
-    Lazyload
+    Lazyload, List, PullRefresh, GoodsAction,
+    GoodsActionIcon, GoodsActionButton, Dialog,
+    ImagePreview, Sku
 } from 'vant';
 import 'vant/lib/index.css';
 
@@ -21,3 +23,11 @@ Vue.use(Grid);
 Vue.use(GridItem);
 Vue.use(Divider);
 Vue.use(Lazyload);
+Vue.use(List);
+Vue.use(PullRefresh);
+Vue.use(GoodsAction);
+Vue.use(GoodsActionIcon);
+Vue.use(GoodsActionButton);
+Vue.use(Dialog);
+Vue.use(ImagePreview);
+Vue.use(Sku);

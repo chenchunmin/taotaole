@@ -4,15 +4,18 @@
             <img v-lazy="data.img_url" />
         </div>
         <div class="title ellipsis_l1">{{ data.title }}</div>
-        <div class="footer">
-            <span class="price">&yen;{{ data.sell_price }}</span>
-            <span class="buy">{{ data.buy }}购买</span>
-        </div>
+        <slot name="footer">
+            <div class="footer">
+                <span class="price">&yen;{{ data.sell_price }}</span>
+                <span class="buy">{{ data.buy }}购买</span>
+            </div>
+        </slot>
     </div>
 </template>
 
 <script>
 export default {
+    name: 'Goods',
     props: {
         data: {
             type: Object,

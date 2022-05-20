@@ -56,7 +56,7 @@ export default {
             limit: 12,
             lunboData: [],
             gridData: [
-                { text: "乐淘超市", img: png1, to: "/goodslist" },
+                { text: "海淘超市", img: png1, to: "/goodslist" },
                 { text: "新闻列表", img: png2, to: "/goodslist" },
                 { text: "乐淘生鲜", img: png3, to: "/goodslist" },
                 { text: "生活缴费", img: png4, to: "/goodslist" },

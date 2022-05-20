@@ -12,3 +12,13 @@ export function fetchGoods(page = 1, limit = 10) {
 export function fetchGoodsList(page = 1, limit = 10) {
     return instance.get(`/getgoods?pageindex=${page}&pagesize=${limit}`)
 }
+
+// 商品详情轮播图
+export function fetchGoodsLunbo(goodsid) {
+    return instance.get(`/getthumbimages/${goodsid}`)
+}
+
+// 商品详情基本信息
+export function fetchGoodsInfo(goodsid) {
+    return instance.get(`/getgoodsinfo/${goodsid}`)
+}
