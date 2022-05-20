@@ -4,7 +4,6 @@
 ```
 git clone https://github.com/chenchunmin/taotaole.git
 ```
-
 2. 进入项目目录，安装依赖，运行项目
 ```
 npm install

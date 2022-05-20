@@ -4,7 +4,7 @@
         <van-sticky>
             <div class="search">
                 <div class="logoWrap">
-                    <img src="../assets/images/logo.jpg" alt="" />
+                    <img src="../assets/images/logo.webp" alt="" />
                 </div>
                 <van-search placeholder="笔记本"></van-search>
             </div>
@@ -114,8 +114,8 @@ export default {
 
             img {
                 width: 100%;
-                // height: 100%;
-                transform: scale(0.8);
+                height: 50px;
+                // transform: scale(0.8);
             }
         }
 
