@@ -1,8 +1,9 @@
-import instance from "./request.js";
+import instance from "./request.js"
 // 轮播图
 export function fetchLunbo() {
     return instance.get('/getlunbo')
 }
+
 // 推荐商品
 export function fetchGoods(page = 1, limit = 10) {
     return instance.get(`/recommend?page=${page}&limit=${limit}`)
@@ -21,4 +22,14 @@ export function fetchGoodsLunbo(goodsid) {
 // 商品详情基本信息
 export function fetchGoodsInfo(goodsid) {
     return instance.get(`/getgoodsinfo/${goodsid}`)
+}
+
+// 购物车商品
+export function fetchShopCar(ids) {
+    return instance.get(`/getshopcarlist/${ids}`)
+}
+
+// 登录
+export function fetchLogin(username, password) {
+    return instance.post('/login', {username, password})
 }

@@ -11,7 +11,7 @@ export default {
   data() {
     return {
       ShowNavBar: true,
-      isOnline: navigator.online
+      isOnline: navigator.online,
     };
   },
 
@@ -30,13 +30,12 @@ export default {
     },
     // watch监听网络状态
     isOnline() {
-      this.isOnline === false && this.$toast.fail('网络异常,请检查网络')
-      this.isOnline === true && this.$toast.success('网络已连接')
-    }
+      this.isOnline === false && this.$toast.fail("网络异常,请检查网络");
+      this.isOnline === true && this.$toast.success("网络已连接");
+    },
   },
 
   methods: {
-
     onClickLeft() {
       // 返回页面栈的上一个页面(router:路由器route:当前路由)
       this.$router.back();
@@ -45,7 +44,6 @@ export default {
     updateNetwork(e) {
       this.isOnline = e.type == "online" ? true : false;
     },
-
   },
 
   mounted() {
@@ -53,11 +51,10 @@ export default {
     window.addEventListener("online", this.updateNetwork);
     window.addEventListener("offline", this.updateNetwork);
   },
-
 };
 </script>
 <style lang="scss">
-@import './assets/css/common.scss';
+@import "./assets/css/common.scss";
 
 * {
   box-sizing: border-box;

@@ -3,7 +3,7 @@
         <router-view></router-view>
         <van-tabbar v-model="active" :active-color="color">
             <van-tabbar-item icon="home-o" to="/home/index">首页</van-tabbar-item>
-            <van-tabbar-item icon="shopping-cart-o" badge="5" to="/home/shopcar">购物车</van-tabbar-item>
+            <van-tabbar-item icon="shopping-cart-o" :badge="$store.getters.getCarNumber" to="/home/shopcar">购物车</van-tabbar-item>
             <van-tabbar-item icon="user-o" to="/home/users">我的</van-tabbar-item>
         </van-tabbar>
     </div>

@@ -5,10 +5,17 @@ import {
     SwipeItem, Grid, GridItem, Divider,
     Lazyload, List, PullRefresh, GoodsAction,
     GoodsActionIcon, GoodsActionButton, Dialog,
-    ImagePreview, Sku
+    ImagePreview, Sku, Form, Field, Notify,
+    Checkbox, CheckboxGroup, Stepper,SubmitBar,
+    Cell, CellGroup
 } from 'vant';
 import 'vant/lib/index.css';
 
+Vue.use(Cell);
+Vue.use(CellGroup);
+Vue.use(Stepper);
+Vue.use(Checkbox);
+Vue.use(CheckboxGroup);
 Vue.use(Button);
 Vue.use(Tabbar);
 Vue.use(TabbarItem);
@@ -31,3 +38,7 @@ Vue.use(GoodsActionButton);
 Vue.use(Dialog);
 Vue.use(ImagePreview);
 Vue.use(Sku);
+Vue.use(Form);
+Vue.use(Field);
+Vue.use(Notify);
+Vue.use(SubmitBar );
